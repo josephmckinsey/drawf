@@ -1,0 +1,75 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8cded9ea13f60b76dede48a2325b7d9a738786a61b23e6a8446ab4700c3e0bb7
+
+name:           drawf
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/josephmckinsey/drawf#readme>
+homepage:       https://github.com/josephmckinsey/drawf#readme
+bug-reports:    https://github.com/josephmckinsey/drawf/issues
+author:         Joseph McKinsey
+maintainer:     josephmckinsey2@gmail.com
+copyright:      2019 Joseph McKinsey
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/josephmckinsey/aurora
+
+library
+  exposed-modules:
+      Lib
+      Noise
+  other-modules:
+      Paths_drawf
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , hip >=1.5 && <1.6
+    , random
+    , transformers
+    , linear
+  default-language: Haskell2010
+
+executable drawf-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_drawf
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      drawf
+    , base >=4.7 && <5
+    , hip >=1.5 && <1.6
+    , random
+    , transformers
+    , linear
+  default-language: Haskell2010
+
+test-suite drawf-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_drawf
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      drawf
+    , base >=4.7 && <5
+    , hip >=1.5 && <1.6
+    , random
+    , transformers
+    , linear
+  default-language: Haskell2010
